@@ -1,0 +1,38 @@
+DEBUT PROGRAMME
+	main
+		int nbParticipantsQualifies= 0
+		afficher "Combien de participants?"
+		int nbParticipants = lire au clavier
+		BOUCLE nbParticipants 
+			afficher "Participant n°" + i
+			SI participantEstQualifie()
+			ALORS nbParticipantsQualifies++
+		FIN BOUCLE
+		afficher nbParticipantsQualifies + " participants se sont qualifiés"
+	FIN main
+	
+	participantEstQualifie
+		int nbJuges = 8
+		int sommeCotes = 0
+		int cotePlusBasse = Integer.MAX_VALUE
+		int cotePlusElevee = Integer.MIN_VALUE
+		
+		BOUCLE nbJuges
+			afficher "Quelle note lui a attribué le juge n°" + i
+			int note = lire au clavier
+
+			sommeCotes += cote
+
+			SI cote < cotePlusBasse
+			ALORS cotePlusBasse = cote
+
+			SI cote > cotePlusElevee
+			ALORS cotePlusElevee = cote
+		FIN BOUCLE
+
+		sommeCotes -= cotePlusBasse + cotePlusElevee 
+		double moyenne = sommeCotes / (nbJuges - 2)
+		afficher moyenne
+		return moyenne >= 8
+	FIN participantEstQualifie
+FIN PROGRAMME

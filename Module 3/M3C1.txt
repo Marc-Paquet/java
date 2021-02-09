@@ -1,0 +1,13 @@
+DEBUT PROGRAMME
+	int sommeDesMoyennes = 0
+	BOUCLE 25 fois
+		int sommeCotes = 0
+		BOUCLE 10 fois
+			sommeDesCotes += lire au clavier un entier
+		FIN BOUCLE
+		double moyenne = sommeDesCotes / 10
+		afficher moyenne
+		sommeDesMoyennes += moyenne
+	FIN BOUCLE
+	afficher sommeDesMoyennes / 25
+FIN PROGRAMME
